@@ -39,13 +39,7 @@ func main() {
 	fmt.Println(" Number of keys:", b.NumKeys)
 	fmt.Println(" Application Version:", version)
 	fmt.Println(" Customer Panel Link:", b.CustomerPanelLink)
-
-	time.Sleep(1 * time.Second) //* Rate Limit Wait
-	fmt.Println("\n Current Session Validation Status:", b.Check())
-	time.Sleep(1 * time.Second) //* Rate Limit Wait
-	fmt.Println(" Blacklisted?:", b.CheckBlack())
-	time.Sleep(1 * time.Second) //* Rate Limit Wait
-
+	
 	fmt.Println("\n [1] Login\n [2] Register\n [3] Upgrade\n [4] License key only\n\n Choose option: ")
 
 	char, _, err := reader.ReadRune()
@@ -125,8 +119,6 @@ func main() {
 	fmt.Println(" Last login at:", b.Lastlogin)
 	fmt.Println(" Subscription:", b.Subscription)
 
-	fmt.Println("\n Current Session Validation Status:", b.Check())
-
 	/* --> Extra Functions <--
 	* User Variables *
 	b.SetVar("VariableName", "VariableData") // Set up User Variable
@@ -152,8 +144,8 @@ func main() {
 	b.Log("Message") // Send Log to Webhook of your choice ^^
 	*/
 
-	fmt.Println("\n Closing in ten seconds...")
-	time.Sleep(10 * time.Second)
+	fmt.Println("\n Closing in 5 seconds...")
+	time.Sleep(5 * time.Second)
 	os.Exit(0)
 }
 
